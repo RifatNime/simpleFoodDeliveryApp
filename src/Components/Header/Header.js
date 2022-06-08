@@ -1,10 +1,11 @@
 import { BarChart, SearchRounded, ShoppingCartRounded } from '@mui/icons-material'
 import React from 'react'
 import './Header.css';
+import logo from '../../image/logo.png';
 
 function Header() {
   return <header>
-    <img src="" alt="" />
+    <img src={logo} alt="" className='logo'/>
     <div className="inputBox">
       <SearchRounded className='searchIcon'></SearchRounded>
       <input type='text' placeholder='Search'></input>
@@ -21,7 +22,7 @@ function Header() {
     <div className="profileContainer">
       <div className="imgBox">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fprofile.jpg?alt=media&token=36821495-39b9-4145-bde3-16c47c6ff937"
+          src="https://i0.wp.com/buzz4fun.net/wp-content/uploads/2020/06/Julius-Pringles.jpg?fit=760%2C500&ssl=1"
           alt=""
         />
       </div>

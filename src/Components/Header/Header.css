@@ -37,7 +37,7 @@ header {
 .inputBox input {
     width: 100%;
     height: 100%;
-    outline: none;
+    outline: none; /**/
     border: none;
     background: transparent;
     color: #787a84;
@@ -45,14 +45,14 @@ header {
     font-size: 14px;
     font-weight: 500;
 }
-
+/* Cart Start */
 .shoppingCart {
-    position: relative;
-    width: 30px;
-    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
 }
 
 .shoppingCart .cart {
@@ -63,14 +63,14 @@ header {
 .shoppingCart .cart_content {
     width: 20px;
     height: 20px;
-    background: #f8901c;
-    border-radius: 100%;
-    min-width: 20px;
-    min-height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    background: #f8901c;
+    border-radius: 100%;
+    min-width: 20px;
+    min-height: 20px;
     right: 0;
     top: -8px;
 }
@@ -90,14 +90,14 @@ header {
 }
 
 .profileContainer .imgBox {
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background: #444;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #444;
+    min-width: 40px;
     overflow: hidden;
 }
 
@@ -122,11 +122,4 @@ header {
     color: #373848;
     font-size: 30px !important;
 }
-
-main {
-    width: 100%;
-    /* height: calc(100% - 60px); */
-    height: auto;
-    position: relative;
-    margin-top: 60px;
-}
+/* Ends */

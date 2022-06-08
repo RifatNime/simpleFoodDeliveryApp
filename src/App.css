@@ -9,4 +9,21 @@
   display: none;
 }
 
+/* Main Section Styling Start */
+main {
+  width: 100%;
+  /* height: calc(100% - 60px); */
+  height: auto;
+  position: relative;
+  margin-top: 60px;
+}
+.mainContainer {
+  width: 100%;
+  height: auto;
+  background: #faf9fb;
+  padding: 10px;
+  padding-bottom: 100px;
+}
 
+
+/* Main Section Styling End */
