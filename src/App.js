@@ -3,7 +3,9 @@ import { useEffect } from "react";
 import "./App.css";
 import BannerName from "./Components/BannerName/BannerName";
 import Header from "./Components/Header/Header";
+import MenuCard from "./Components/MenuCard/MenuCard";
 import MenuContainer from "./Components/MenuContainer/MenuContainer";
+import SubMenuContainer from "./Components/SubMenuContainer/SubMenuContainer";
 
 
 function App() {
@@ -30,6 +32,22 @@ function App() {
           <BannerName name={'Rifat'} discount={'20'} link={'#'} />
           <img src="http://pizza-blitz-frommern.de/wp-content/uploads/2019/03/Vespa.png" alt="" className="deliveryPic" />
         </div>
+        {/* DishItems */}
+        <div className="dishContainer">
+          <div className="menuCard">
+            <SubMenuContainer></SubMenuContainer>
+          </div>
+          <div className="rowContainer">
+            <MenuCard
+                      imgSrc='https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png'
+                      // imgSrc={data.imgSrc}
+                      name='Burger'
+                      // name={data.name}
+                      // isActive={data.id == "1" ? true : false}
+                    />
+          </div>
+          <div className="dishItemContainer"></div>
+        </div>
       </div>
       <div className="rightMenu"></div>
     </main>
@@ -37,7 +55,7 @@ function App() {
     {/* Bottom Menu Sections */}
     <div className="bottomMenu">
       <ul id='menu'>
-        <MenuContainer link={'#'} icon={<HomeRounded />} />
+        <MenuContainer link={'#'} icon={<HomeRounded />} isHome />
         <MenuContainer link={'#'} icon={<Chat />} />
         <MenuContainer link={'#'} icon={<AccountBalanceWalletRounded />} />
         <MenuContainer link={'#'} icon={<Favorite />} />
