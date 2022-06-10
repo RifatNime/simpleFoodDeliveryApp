@@ -8,6 +8,8 @@ import MenuContainer from "./Components/MenuContainer/MenuContainer";
 import SubMenuContainer from "./Components/SubMenuContainer/SubMenuContainer";
 import { MenuItems, Items } from "./Components/ItemsData/ItemsData";
 import ItemCard from "./Components/ItemCard/ItemCard";
+import DebitCard from "./Components/DebitCard/DebitCard";
+import CartItem from "./Components/CartItem/CartItem";
 
 
 function App() {
@@ -54,7 +56,7 @@ function App() {
         {/* DishItems */}
         <div className="dishContainer">
           <div className="menuCard">
-            <SubMenuContainer></SubMenuContainer>
+            <SubMenuContainer name={'Menu Category'}></SubMenuContainer>
           </div>
           <div className="rowContainer">
             {
@@ -84,7 +86,32 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="rightMenu"></div>
+      <div className="rightMenu">
+        <div className="debitCardContainer">
+          <div className="debitCard">
+            <DebitCard />
+          </div>
+        </div>
+        <div className="cartCheckOutContainer">
+          <div className="cartContainer">
+            <SubMenuContainer name={'Carts Items'}/>
+            <div className="cartItems">
+            <div className="cartItems">
+                  {cart &&
+                    cart.map((data) => (
+                      <CartItem
+                        key={data.id}
+                        itemId={data.id}
+                        name={data.name}
+                        imgSrc={data.imgSrc}
+                        qty={"4"}
+                        price={data.price}
+                      />
+                    ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     {/* Bottom Menu Sections */}
