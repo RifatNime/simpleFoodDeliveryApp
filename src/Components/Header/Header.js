@@ -2,14 +2,15 @@ import { BarChart, SearchRounded, ShoppingCartRounded } from '@mui/icons-materia
 import React, { useEffect } from 'react'
 import './Header.css';
 import logo from '../../image/logo.png';
+import { useStateValue } from '../StateProvider/StateProvider';
 
 function Header() {
-
+  const [{ cart }, dispatch] = useStateValue();
   useEffect(() => {
     const toggleMenu = document.querySelector('.toggleMenu');
     toggleMenu.addEventListener('click', () => {
       document.querySelector('.rightMenu').classList.toggle('active')
-    })
+    });
   }, [])
   return <header>
     <img src={logo} alt="" className='logo' />

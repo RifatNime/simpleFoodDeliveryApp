@@ -4,6 +4,7 @@
   background: #faf9fb;
   overflow-x: hidden;
 }
+
 /* scroll off */
 .App::-webkit-scrollbar {
   display: none;
@@ -17,6 +18,7 @@ main {
   position: relative;
   margin-top: 60px;
 }
+
 .mainContainer {
   width: 100%;
   height: auto;
@@ -29,6 +31,81 @@ main {
 /* Main Section Styling End */
 
 .dishContainer {
-  width: 100%;
-  padding: 10px 0;
+  width: 100% !important;
+  padding: 10px 0 !important;
+}
+
+@media screen and (min-width: 950px) {
+  .toggleMenu {
+    display: none !important;
+  }
+
+  .profileContainer .userName {
+    display: block !important;
+  }
+
+  .bottomMenu {
+    left: 21% !important;
+    width: 40% !important;
+  }
+
+  .mainContainer {
+    width: calc(100% - 350px) !important;
+  }
+
+  .banner {
+    height: 160px !important;
+  }
+
+  .deliveryPic {
+
+    bottom: -31px !important;
+    width: 229px !important;
+  }
+
+  .bannerContent h3 {
+    font-size: 24px !important;
+  }
+
+  .bannerContent p {
+    font-size: 15px !important;
+    margin: 12px 0 !important;
+    width: unset !important;
+  }
+
+  .bannerContent a {
+    font-size: 16px !important;
+  }
+
+  main {
+    display: flex !important;
+  }
+
+  .mainContainer {
+    padding: 10px 30px;
+  }
+
+  .rightMenu {
+    position: fixed;
+    z-index: 1;
+    transform: translateX(0%) !important;
+    top: unset;
+    padding: 20px 15px;
+  }
+
+  .itemCard {
+    width: 180px  !important;
+    height: 200px  !important;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .rowContainer {
+    justify-content: space-between;
+  }
+
+  .inputBox {
+    /* width: 40% !important;  */
+    /*width: 130px !important; */
+  }
 }
