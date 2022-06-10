@@ -4,8 +4,7 @@ import { ChevronRightRounded } from "@mui/icons-material";
 
 function MenuCard({ imgSrc, name, isActive }) {
     return (
-        <div className='rowMenuCard '>
-        {/* <div className={`rowMenuCard ${isActive ? `active` : ``}`}> */}
+        <div className={`rowMenuCard ${isActive ? `active` : ``}`}>
             <div className="imgBox">
                 <img src={imgSrc} alt="" />
             </div>

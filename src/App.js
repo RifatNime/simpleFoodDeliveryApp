@@ -1,14 +1,20 @@
 import { AccountBalanceWalletRounded, Chat, Favorite, HomeRounded, Settings, SummarizeRounded } from "@mui/icons-material";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import BannerName from "./Components/BannerName/BannerName";
 import Header from "./Components/Header/Header";
 import MenuCard from "./Components/MenuCard/MenuCard";
 import MenuContainer from "./Components/MenuContainer/MenuContainer";
 import SubMenuContainer from "./Components/SubMenuContainer/SubMenuContainer";
+import { MenuItems, Items } from "./Components/ItemsData/ItemsData";
+import ItemCard from "./Components/ItemCard/ItemCard";
 
 
 function App() {
+  //state for MAIN DISH
+  const [isMainData, setMainData] = useState(
+    Items.filter((element) => element.itemId === "burger01")
+  );
 
   useEffect(() => {
     const menuLi = document.querySelectorAll("#menu li");
@@ -19,8 +25,21 @@ function App() {
     }
     //click function setMenuActive
     menuLi.forEach((n) => n.addEventListener("click", setMenuActive));
-  }, [])
+    //menuCard Active toggle onclick
+    const menuCards = document.querySelector('.rowContainer').querySelectorAll('.rowMenuCard');
+    //click function setMenuCardActive
+    function setMenuCardActive() {
+      menuCards.forEach((n) => n.classList.remove("active"));
+      this.classList.add("active");
+    }
 
+    menuCards.forEach(n => n.addEventListener('click', setMenuCardActive));
+  }, [isMainData]);
+
+  // data filter by click  item id er modde diye pathabo jeta filter hobe
+  const setData = (itemId) => {
+    setMainData(Items.filter((element) => element.itemId === itemId));
+  };
   return <div className="App">
     {/* Header */}
     <Header></Header>
@@ -38,15 +57,31 @@ function App() {
             <SubMenuContainer></SubMenuContainer>
           </div>
           <div className="rowContainer">
-            <MenuCard
-                      imgSrc='https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png'
-                      // imgSrc={data.imgSrc}
-                      name='Burger'
-                      // name={data.name}
-                      // isActive={data.id == "1" ? true : false}
-                    />
+            {
+              MenuItems && MenuItems.map((data) => (
+                //on click filter function called here
+                <div key={data.id} onClick={() => setData(data.itemId)}>
+                  <MenuCard
+                    imgSrc={data.imgSrc}
+                    name={data.name}
+                    isActive={data.id === "1" ? true : false}
+                  />
+                </div>
+              ))}
           </div>
-          <div className="dishItemContainer"></div>
+          <div className="dishItemContainer">
+            {isMainData &&
+              isMainData.map((data) => (
+                <ItemCard
+                  key={data.id}
+                  itemId={data.id} //to show id in inspect and data
+                  imgSrc={data.imgSrc}
+                  name={data.name}
+                  ratings={data.ratings}
+                  price={data.price}
+                />
+              ))}
+          </div>
         </div>
       </div>
       <div className="rightMenu"></div>
