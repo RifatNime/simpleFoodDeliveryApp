@@ -1,11 +1,18 @@
 import { BarChart, SearchRounded, ShoppingCartRounded } from '@mui/icons-material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Header.css';
 import logo from '../../image/logo.png';
 
 function Header() {
+
+  useEffect(() => {
+    const toggleMenu = document.querySelector('.toggleMenu');
+    toggleMenu.addEventListener('click', () => {
+      document.querySelector('.rightMenu').classList.toggle('active')
+    })
+  }, [])
   return <header>
-    <img src={logo} alt="" className='logo'/>
+    <img src={logo} alt="" className='logo' />
     <div className="inputBox">
       <SearchRounded className='searchIcon'></SearchRounded>
       <input type='text' placeholder='Search'></input>

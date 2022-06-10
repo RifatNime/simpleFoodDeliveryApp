@@ -93,23 +93,28 @@ function App() {
           </div>
         </div>
         <div className="cartCheckOutContainer">
+          <SubMenuContainer name={'Carts Items'} />
           <div className="cartContainer">
-            <SubMenuContainer name={'Carts Items'}/>
+
             <div className="cartItems">
-            <div className="cartItems">
-                  {cart &&
-                    cart.map((data) => (
-                      <CartItem
-                        key={data.id}
-                        itemId={data.id}
-                        name={data.name}
-                        imgSrc={data.imgSrc}
-                        qty={"4"}
-                        price={data.price}
-                      />
-                    ))}
+              {cart &&
+                cart.map((data) => (
+                  <CartItem
+                    key={data.id}
+                    itemId={data.id}
+                    name={data.name}
+                    imgSrc={data.imgSrc}
+                    qty={"4"}
+                    price={data.price}
+                  />
+                ))}
             </div>
           </div>
+          <div className="totalSection">
+            <h3>Total</h3>
+            <p><span>$ </span> {total}</p>
+          </div>
+          <button className="checkOut">Check Out</button>
         </div>
       </div>
     </main>
