@@ -94,8 +94,8 @@ main {
   }
 
   .itemCard {
-    width: 180px  !important;
-    height: 200px  !important;
+    width: 180px !important;
+    height: 200px !important;
   }
 }
 
@@ -105,7 +105,7 @@ main {
   }
 
   .inputBox {
-    /* width: 40% !important;  */
+    width: 60% !important;
     /*width: 130px !important; */
   }
 }

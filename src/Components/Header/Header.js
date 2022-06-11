@@ -6,12 +6,13 @@ import { useStateValue } from '../StateProvider/StateProvider';
 
 function Header() {
   const [{ cart }, dispatch] = useStateValue();
+
   useEffect(() => {
-    const toggleMenu = document.querySelector('.toggleMenu');
-    toggleMenu.addEventListener('click', () => {
-      document.querySelector('.rightMenu').classList.toggle('active')
+    const toggleIcon = document.querySelector(".toggleMenu");
+    toggleIcon.addEventListener("click", () => {
+      document.querySelector(".rightMenu").classList.toggle("active");
     });
-  }, [])
+  }, []);
   return <header>
     <img src={logo} alt="" className='logo' />
     <div className="inputBox">
@@ -20,10 +21,9 @@ function Header() {
     </div>
 
     <div className="shoppingCart">
-
-      <ShoppingCartRounded className='cart' />
-      <div className='cart_content'>
-        <p>2 </p>
+      <ShoppingCartRounded className="cart" />
+      <div className={`${!cart ? "noCartItem" : "cart_content"}`}>
+        <p>{cart ? cart.length : ""}</p>
       </div>
     </div>
 
